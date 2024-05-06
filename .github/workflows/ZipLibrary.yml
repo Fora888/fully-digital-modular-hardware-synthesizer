@@ -1,0 +1,42 @@
+name: "Zip library"
+
+on:
+  push:
+
+jobs:
+  zip-files:
+    runs-on: ubuntu-latest
+
+    permissions:                # Job-level permissions configuration starts here
+      contents: write           # 'write' access to repository contents
+      pull-requests: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with: 
+          persists-credentials: false
+          fetch-depth: 0
+
+      - name: action-zip
+        uses: montudor/action-zip@v1.0.0
+            
+      - name: Zip Arduino Library
+        run: zip -q -r TeensyDigitalModularExtension.zip TeensyDigitalModularExtension
+        working-directory: fully-digital-modular-synthesizer/Teensy
+
+      - name: Commit files
+        run: |
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git commit -a -m "Zipped stuff"
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
+
+        
+  
+
