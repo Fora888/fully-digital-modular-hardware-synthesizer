@@ -1,8 +1,8 @@
 name: "Zip library"
 
 on:
-  push:
-
+  workflow_dispatch
+  
 jobs:
   zip-files:
     runs-on: ubuntu-latest
@@ -23,7 +23,7 @@ jobs:
             
       - name: Zip Arduino Library
         run: zip -q -r TeensyDigitalModularExtension.zip TeensyDigitalModularExtension
-        working-directory: /Teensy
+        working-directory: Teensy
 
       - name: Commit files
         run: |
