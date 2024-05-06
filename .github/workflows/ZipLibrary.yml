@@ -23,7 +23,7 @@ jobs:
             
       - name: Zip Arduino Library
         run: zip -q -r TeensyDigitalModularExtension.zip TeensyDigitalModularExtension
-        working-directory: fully-digital-modular-synthesizer/Teensy
+        working-directory: /Teensy
 
       - name: Commit files
         run: |
