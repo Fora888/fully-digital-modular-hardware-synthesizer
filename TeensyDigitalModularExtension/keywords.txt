@@ -1,0 +1,37 @@
+AudioOutputSerial				KEYWORD1
+AudioInputSerial				KEYWORD1
+
+AudioSynthWavetableEurorack		KEYWORD1
+setFmRange						KEYWORD2
+getWaveform						KEYWORD2
+setOctave						KEYWORD2
+loadNextFile					KEYWORD2
+
+AudioOffset						KEYWORD1
+
+Potentiometer					KEYWORD1
+
+AudioInvert						KEYWORD1
+
+AudioADSR						KEYWORD1
+setMode							KEYWORD2
+Mode							KEYWORD3
+LOOP							LITERAL1
+ADR								LITERAL1
+ADSR							LITERAL1
+
+SC16IS7xxManager				KEYWORD1
+
+SC16IS7xxOutput					KEYWORD1
+
+SC16IS7xxInput					KEYWORD1
+
+AudioLED						KEYWORD1
+
+AudioForwardLastChanged			KEYWORD1
+
+AudioVCA						KEYWORD1
+
+AudioLinearToExpDB				KEYWORD1
+setStrength						KEYWORD2
+

@@ -1,0 +1,12 @@
+#pragma once
+#include "AudioSynthEurorackWavetable/EurorackWavetable.h"
+#include "AudioSerialIO/SerialInput.h"
+#include "AudioSerialIO/SerialOutput.h"
+#include "AudioOffset.h"
+#include "AudioForwardLastChanged.h"
+#include "AudioLED/AudioLED.h"
+#include "AudioSC16IS7xx/SC16IS7xxAudio.h"
+#include "AudioADSR/AudioADSR.h"
+#include "AudioInvert.h"
+#include "AudioVCA/AudioVCA.h"
+#include "AudioLinearToExpDB.h"
