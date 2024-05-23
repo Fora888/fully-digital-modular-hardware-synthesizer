@@ -36,4 +36,5 @@ Since UART necessitates only one cable for transmission, akin to mono audio, the
 
 **Module selection** - The digital protocol described is still in its early stages of development and therefore there are no manufacturers for it yet. So the only way to use it is to build your own modules
 
-
+## Implementations and examples
+An implementation for the teensy audio library as well as several example modules can be found in the [Teensy](https://github.com/Fora888/fully-digital-modular-hardware-synthesizer/tree/main/Teensy) folder.
