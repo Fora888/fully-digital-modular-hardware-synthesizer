@@ -8,7 +8,7 @@ The audio data is transmitted and processed at 44.1kHz sample rate and 16 Bits o
 
 ### Data transmission
 Data transmission utilizes UART in combination with a simple protocol.
-UART is configured at a baud rate of 2,000,000 with 8 data bits, 1 stop bit, no flow control and regular polarity. Singal levels are defined as 0V for low and 3.3V for high. However, all inputs and outputs should withstand voltages from +12V to -12V to prevent accidental damage when interfaced with analog equipment.
+UART is configured at a baud rate of 2,000,000 with 8 data bits, 1 stop bit, no flow control and regular polarity. Signal levels are defined as 0V for low and 3.3V for high. However, all inputs and outputs should withstand voltages from +12V to -12V to prevent accidental damage when interfaced with analog equipment.
 Due to UART's limitation of transmitting only 8 bits at a time and each audio sample requiring 16 bits, each sample is transmitted as three sequential packets. Each packet consists of 6 data bits followed by 2 order bits. Therefore a full UART frame looks like the following:
 |1|6|2|1|
 |-|-|-|-|
