@@ -17,7 +17,15 @@ Due to UART's limitation of transmitting only 8 bits at a time and each audio sa
 The least significant 8 bits of a sample are sent first with order bits '00', followed by the middle 8 bits with order bits '10', and finally the most significant 4 bits with order bits '01'. The last two data bits of the last packet with order bits '01', as well as the order bit combination '11', remain unused for now but could be utilized for future extensions.
 
 ### Power
-While a power specification is planned, current implementation utilizes eurorack power supplies in conjunction with 5V regulators
+Modules are connected to +5V and ground via a 6 pin, 2 row, 2.54mm (0.1 inch) spacing header connector. These use the following pinout:
+
+| | | |
+| ------------- | ------------- | --------- |
+| 5v  | 5v  | GND |
+| GND | GND | GND |
+
+This asymmetric pattern ensures, that in case the header is plugged in incorrectly, the powersupply is shortcircuited and the module doesn't get damaged. Therefore it is advisable for powersupplys to feature some sort of fusing mechanism.
+Since noisy power doesn't impact the sound quality of digital audio, switching powersupplys are sufficient for voltage conversion
 
 ### Mechanical
 Since UART necessitates only one cable for transmission, akin to mono audio, the mechanical specifications of virtually any existing analog modular synthesizer can be used. The examples are based on eurorack the eurorack specification with 128mm height and 3.5mm TS (mono) phone connectors.
