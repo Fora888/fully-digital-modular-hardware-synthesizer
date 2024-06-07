@@ -1,7 +1,7 @@
 # Fully digital modular synthesizer
 A fully digital modular synthesizer specification
 
-## Spezification
+## Specification
 
 ### Audio data format
 The audio data is transmitted and processed at 44.1kHz sample rate and 16 Bits of resolution
@@ -24,8 +24,8 @@ Modules are connected to +5V and ground via a 6 pin, 2 row, 2.54mm (0.1 inch) sp
 | 5v  | 5v  | GND |
 | GND | GND | GND |
 
-This asymmetric pattern ensures, that in case the header is plugged in incorrectly, the powersupply is shortcircuited and the module doesn't get damaged. Therefore it is advisable for powersupplys to feature some sort of fusing mechanism.
-Since noisy power doesn't impact the sound quality of digital audio, switching powersupplys are sufficient for voltage conversion
+This asymmetric pattern ensures, that in case the header is plugged in incorrectly, the power supply is short-circuited  and the module doesn't get damaged. Therefore it is advisable for power supplys to feature some sort of fusing mechanism.
+Since noisy power doesn't impact the sound quality of digital audio, switching power supplys are sufficient for voltage conversion
 
 ### Mechanical
 Since UART necessitates only one cable for transmission, akin to mono audio, the mechanical specifications of virtually any existing analog modular synthesizer can be used. The examples are based on eurorack the eurorack specification with 128mm height and 3.5mm TS (mono) phone connectors.
@@ -37,7 +37,7 @@ Since UART necessitates only one cable for transmission, akin to mono audio, the
 
 **Reduced complexity** - Digital signals don't require clean power or buffering in order to deliver good audio. Merely two diodes and one or two resistors, which are always in the exact same configuration, are required per input or output. In addition all I/O is full 16 bit and the audio is inherently DC coupled.
 
-**Lower Price** - Microprocessors are cheap and require relativly few and simple auxiliary components when compared to analog electronics. The reduced complexity of digital signal processing also leads to lower development costs.
+**Lower Price** - Microprocessors are cheap and require relatively few and simple auxiliary components when compared to analog electronics. The reduced complexity of digital signal processing also leads to lower development costs.
 
 ### Disadvantages
 **Latency** - Digital signal processing always comes with latency. In case of the examples, where audio is processed in blocks of 128 samples, this latency comes in at ~3 ms per module. Fast processors can however reduce the block size, reducing the latency to half of that or even less.
