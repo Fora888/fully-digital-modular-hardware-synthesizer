@@ -434,19 +434,19 @@
     ],
     [
       "b910cce1-132f-4e02-ae3b-82114818915a",
-      "Input"
+      "Attack_Time_Mod_In"
     ],
     [
       "7860b1a5-0dad-4087-bc20-327981cfccb2",
-      "Input1"
+      "Decay_Time_Mod_In"
     ],
     [
       "e9fb4ed3-7ec7-4c44-9421-68ee46cb0dbc",
-      "Input2"
+      "Trigger_In"
     ],
     [
       "a48d7e01-f48f-47a6-9b5f-283e99d66822",
-      "Input3"
+      "Release_Time_Mod_In"
     ],
     [
       "d2cc53ca-c259-4932-a01a-1339e44ac07e",
@@ -454,7 +454,7 @@
     ],
     [
       "43a8a2db-1852-4d25-988f-8aec24fd8ace",
-      "Output1"
+      "Inverted_Output"
     ]
   ],
   "text_variables": {}
