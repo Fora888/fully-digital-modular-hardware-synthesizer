@@ -6,6 +6,10 @@ This folder is a arduino library, which contains an implementation of the protoc
 This folder contains PCBs as well as panel designs for the example modules. All PCBs use 2.54mm spacing between components, which means you can also build these modules on perfboard and connect the components with wire, instead of ordering PCBs
 
 ### VCA
+<p float="left">
+  <img src="https://github.com/Fora888/fully-digital-modular-hardware-synthesizer/blob/main/Teensy/PCB/VCAModule/Rendering.png" width="300" height="300" />
+  <img src="https://github.com/Fora888/fully-digital-modular-hardware-synthesizer/blob/main/Teensy/PCB/VCAModule/Schematic.png" height="300" />
+</p>
 
 ### ADSR envelope generator
 <p float="left">
