@@ -28,18 +28,18 @@ AudioConnection               triggerMixerToIndicator(triggerSignalMixer, 0, cha
 AudioConnection               triggerMixerToOutput(triggerSignalMixer, 0, channel1TriggerOut, 0);
 
 
-//PitchOutput 1
+//ModOutput 1
 
-AudioMIDIPitchChangeInput     channel1PitchInput(1);
-AudioAmplifier                channel1PitchOutputAmp;
-AudioOutputSerial             channel1PitchCVOutput(&Serial7);
-AudioMIDIHostPitchChangeInput midiHostPitchInput(1);
-AudioForwardLastChanged       pitchSignalForwarder;
+AudioMIDIPitchBendInput     channel1ModInput(1);
+AudioAmplifier                channel1ModOutputAmp;
+AudioOutputSerial             channel1ModCVOutput(&Serial7);
+AudioMIDIHostPitchBendInput midiHostModInput(1);
+AudioForwardLastChanged       modSignalForwarder;
 
-AudioConnection               pitch1ToForwarder(channel1PitchInput, 0, pitchSignalForwarder, 0);
-AudioConnection               pitchHostToForwarder(midiHostPitchInput, 0, pitchSignalForwarder, 1);
-AudioConnection               pitchForwarderToAmp(pitchSignalForwarder, 0, channel1PitchOutputAmp, 0);
-AudioConnection               amp1ToOut(channel1PitchOutputAmp, 0, channel1PitchCVOutput, 0);
+AudioConnection               mod1ToForwarder(channel1ModInput, 0, modSignalForwarder, 0);
+AudioConnection               modHostToForwarder(midiHostModInput, 0, modSignalForwarder, 1);
+AudioConnection               modForwarderToAmp(modSignalForwarder, 0, channel1ModOutputAmp, 0);
+AudioConnection               amp1ToOut(channel1ModOutputAmp, 0, channel1ModCVOutput, 0);
 
 
 //NoteOutput 2
@@ -58,18 +58,18 @@ AudioConnection               trigger2ToIndicator(channel2Input, 1, channel2Trig
 AudioConnection               trigger2ToOutput(channel2Input, 1, channel2TriggerOutIndicator, 0);
 
 
-//PitchOutput 2
+//ModOutput 2
 
-AudioMIDIPitchChangeInput     channel2PitchInput(2);
-AudioAmplifier                channel2PitchOutputAmp;
-AudioOutputSerial             channel2PitchCVOutput(&Serial6);
+AudioMIDIPitchBendInput     channel2ModInput(2);
+AudioAmplifier                channel2ModOutputAmp;
+AudioOutputSerial             channel2ModCVOutput(&Serial6);
 AudioMIDIHostControlInput     usbHostControlInput(1,1);
 AudioForwardLastChanged       controlSignalForwarder;
 
-AudioConnection               pitch2ToForwarder(channel2PitchInput, 0, controlSignalForwarder, 0);
+AudioConnection               mod2ToForwarder(channel2ModInput, 0, controlSignalForwarder, 0);
 AudioConnection               controlHostToForwarder(usbHostControlInput, 0, controlSignalForwarder, 1);
-AudioConnection               controlForwarderToAmp(controlSignalForwarder, 0, channel2PitchOutputAmp, 0);
-AudioConnection               amp2ToOut(channel2PitchOutputAmp, 0, channel2PitchCVOutput, 0);
+AudioConnection               controlForwarderToAmp(controlSignalForwarder, 0, channel2ModOutputAmp, 0);
+AudioConnection               amp2ToOut(channel2ModOutputAmp, 0, channel2ModCVOutput, 0);
 
 
 //NoteInput 1
@@ -84,14 +84,14 @@ AudioConnection               noteInput1ToMIDI(channel1NoteIn, 0, channel1Output
 AudioConnection               triggerInput1ToLED(channel1TriggerIn, 0, channel1TriggerInIndicator, 0);
 
 
-//PitchInput1
+//ModInput1
 
-AudioInputSerial              channel1PitchCVInput(&Serial7);
-AudioAmplifier                channel1PitchInputAmp;
-AudioMIDIPitchChangeOutput    channel1PitchOutput(1);
+AudioInputSerial              channel1ModCVInput(&Serial7);
+AudioAmplifier                channel1ModInputAmp;
+AudioMIDIPitchBendOutput    channel1ModOutput(1);
 
-AudioConnection               pitch1CVToAmp(channel1PitchCVInput, 0, channel1PitchInputAmp, 0);
-AudioConnection               amp1ToMIDIOut(channel1PitchInputAmp, 0, channel1PitchOutput, 0);
+AudioConnection               mod1CVToAmp(channel1ModCVInput, 0, channel1ModInputAmp, 0);
+AudioConnection               amp1ToMIDIOut(channel1ModInputAmp, 0, channel1ModOutput, 0);
 
 
 //NoteInput 2
@@ -106,14 +106,14 @@ AudioConnection               noteInput2ToMIDI(channel2NoteIn, 0, channel2Output
 AudioConnection               triggerInput2ToLED(channel2TriggerIn, 0, channel2TriggerInIndicator, 0);
 
 
-//PitchInput2
+//ModInput2
 
-AudioInputSerial              channel2PitchCVInput(&Serial6);
-AudioAmplifier                channel2PitchInputAmp;
-AudioMIDIPitchChangeOutput    channel2PitchOutput(2);
+AudioInputSerial              channel2ModCVInput(&Serial6);
+AudioAmplifier                channel2ModInputAmp;
+AudioMIDIPitchBendOutput    channel2ModOutput(2);
 
-AudioConnection               pitch2CVToAmp(channel2PitchCVInput, 0, channel2PitchInputAmp, 0);
-AudioConnection               amp2ToMIDIOut(channel2PitchInputAmp, 0, channel2PitchOutput, 0);
+AudioConnection               mod2CVToAmp(channel2ModCVInput, 0, channel2ModInputAmp, 0);
+AudioConnection               amp2ToMIDIOut(channel2ModInputAmp, 0, channel2ModOutput, 0);
 
 
 //Clock Output
@@ -148,26 +148,26 @@ AudioConnection               audioOutRightToUsb(usbInput, 1, audioOutputRight, 
 
 //Pot Pins
 
-#define CHANNEL_1_PITCH_OUTPUT_GAIN_DIGITAL_PIN 30
-#define CHANNEL_1_PITCH_OUTPUT_GAIN_ANALOG_PIN 19
+#define CHANNEL_1_MOD_OUTPUT_GAIN_DIGITAL_PIN 30
+#define CHANNEL_1_MOD_OUTPUT_GAIN_ANALOG_PIN 19
 
-#define CHANNEL_2_PITCH_OUTPUT_GAIN_DIGITAL_PIN 31
-#define CHANNEL_2_PITCH_OUTPUT_GAIN_ANALOG_PIN 18
+#define CHANNEL_2_MOD_OUTPUT_GAIN_DIGITAL_PIN 31
+#define CHANNEL_2_MOD_OUTPUT_GAIN_ANALOG_PIN 18
 
-#define CHANNEL_1_PITCH_INPUT_GAIN_DIGITAL_PIN 32
-#define CHANNEL_1_PITCH_INPUT_GAIN_ANALOG_PIN 23
+#define CHANNEL_1_MOD_INPUT_GAIN_DIGITAL_PIN 32
+#define CHANNEL_1_MOD_INPUT_GAIN_ANALOG_PIN 23
 
-#define CHANNEL_2_PITCH_INPUT_GAIN_DIGITAL_PIN 33
-#define CHANNEL_2_PITCH_INPUT_GAIN_ANALOG_PIN 22
+#define CHANNEL_2_MOD_INPUT_GAIN_DIGITAL_PIN 33
+#define CHANNEL_2_MOD_INPUT_GAIN_ANALOG_PIN 22
 
 
 //Pot objects
 
-Potentiometer pitchOut1Gain(CHANNEL_1_PITCH_OUTPUT_GAIN_DIGITAL_PIN,CHANNEL_1_PITCH_OUTPUT_GAIN_ANALOG_PIN);
-Potentiometer pitchOut2Gain(CHANNEL_2_PITCH_OUTPUT_GAIN_DIGITAL_PIN,CHANNEL_2_PITCH_OUTPUT_GAIN_ANALOG_PIN);
+Potentiometer modOut1Gain(CHANNEL_1_MOD_OUTPUT_GAIN_DIGITAL_PIN,CHANNEL_1_MOD_OUTPUT_GAIN_ANALOG_PIN);
+Potentiometer modOut2Gain(CHANNEL_2_MOD_OUTPUT_GAIN_DIGITAL_PIN,CHANNEL_2_MOD_OUTPUT_GAIN_ANALOG_PIN);
 
-Potentiometer pitchIn1Gain(CHANNEL_1_PITCH_INPUT_GAIN_DIGITAL_PIN,CHANNEL_1_PITCH_INPUT_GAIN_ANALOG_PIN);
-Potentiometer pitchIn2Gain(CHANNEL_2_PITCH_INPUT_GAIN_DIGITAL_PIN,CHANNEL_2_PITCH_INPUT_GAIN_ANALOG_PIN);
+Potentiometer modIn1Gain(CHANNEL_1_MOD_INPUT_GAIN_DIGITAL_PIN,CHANNEL_1_MOD_INPUT_GAIN_ANALOG_PIN);
+Potentiometer modIn2Gain(CHANNEL_2_MOD_INPUT_GAIN_DIGITAL_PIN,CHANNEL_2_MOD_INPUT_GAIN_ANALOG_PIN);
 
 
 
@@ -183,20 +183,20 @@ void loop()
 
   //Read Pots
   
-  float pitchOut1GainValue = pitchOut1Gain.read();
-  float pitchOut2GainValue = pitchOut2Gain.read();
+  float modOut1GainValue = modOut1Gain.read();
+  float modOut2GainValue = modOut2Gain.read();
 
-  float pitchIn1GainValue = pitchIn1Gain.read();
-  float pitchIn2GainValue = pitchIn2Gain.read();
+  float modIn1GainValue = modIn1Gain.read();
+  float modIn2GainValue = modIn2Gain.read();
 
 
   //Apply new values 
   
   AudioNoInterrupts();
-  channel1PitchOutputAmp.gain(pitchOut1GainValue);
-  channel2PitchOutputAmp.gain(pitchOut2GainValue);
+  channel1ModOutputAmp.gain(modOut1GainValue);
+  channel2ModOutputAmp.gain(modOut2GainValue);
 
-  channel1PitchInputAmp.gain(pitchIn1GainValue);
-  channel2PitchInputAmp.gain(pitchIn2GainValue);
+  channel1ModInputAmp.gain(modIn1GainValue);
+  channel2ModInputAmp.gain(modIn2GainValue);
   AudioInterrupts();
 }

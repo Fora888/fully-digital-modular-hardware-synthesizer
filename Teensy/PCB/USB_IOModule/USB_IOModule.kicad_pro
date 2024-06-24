@@ -48,7 +48,13 @@
           "min_clearance": 0.508
         }
       },
-      "diff_pair_dimensions": [],
+      "diff_pair_dimensions": [
+        {
+          "gap": 0.0,
+          "via_gap": 0.0,
+          "width": 0.0
+        }
+      ],
       "drc_exclusions": [],
       "meta": {
         "version": 2
@@ -112,8 +118,17 @@
         "solder_mask_min_width": 0.0,
         "use_height_for_length_calcs": true
       },
-      "track_widths": [],
-      "via_dimensions": [],
+      "track_widths": [
+        0.0,
+        0.25,
+        0.5
+      ],
+      "via_dimensions": [
+        {
+          "diameter": 0.0,
+          "drill": 0.0
+        }
+      ],
       "zones_allow_external_fillets": false,
       "zones_use_no_outline": true
     },
@@ -333,7 +348,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "Input.kicad_pro",
+    "filename": "USB_IOModule.kicad_pro",
     "version": 1
   },
   "net_settings": {
@@ -394,6 +409,15 @@
       "version": 1
     },
     "net_format_name": "",
+    "ngspice": {
+      "fix_include_paths": true,
+      "fix_passive_vals": false,
+      "meta": {
+        "version": 0
+      },
+      "model_mode": 0,
+      "workbook_filename": ""
+    },
     "page_layout_descr_file": "",
     "plot_directory": "",
     "spice_adjust_passive_values": false,
@@ -403,8 +427,76 @@
   },
   "sheets": [
     [
-      "54d10ada-a23d-4093-8d18-ac1c586d5534",
+      "ff009cc1-9eea-43f8-957e-0019d1f64e75",
       ""
+    ],
+    [
+      "8dce9796-c430-4b24-ba4c-8b5da2b31438",
+      "Channel_1_Mod_Input"
+    ],
+    [
+      "b9ef1cf9-4027-463a-8df4-64be07e615c8",
+      "Channel_2_Mod_Input"
+    ],
+    [
+      "dca21c24-614d-4a0e-841d-56f65a51bf38",
+      "Channel_1_Pitch_Input"
+    ],
+    [
+      "b4890541-9dc2-41cc-92a3-3843b0a0e96b",
+      "Channel_2_Pitch_Input"
+    ],
+    [
+      "e11bb489-1aff-417b-afc2-32c2f1f4eabb",
+      "Channel_1_Trigger_Input"
+    ],
+    [
+      "66f17886-2008-4160-9428-93db70ba0e3b",
+      "Channel_2_Trigger_Input"
+    ],
+    [
+      "ba2c2e34-ca65-4f77-9c01-3c0a984ca2a8",
+      "Audio_Input_Left"
+    ],
+    [
+      "9178b327-3e09-4727-a4e4-7404b4647276",
+      "Audio_Input_Right"
+    ],
+    [
+      "03c417c1-6bcd-42d5-b849-b194cc029109",
+      "Channel_1_Mod_Output"
+    ],
+    [
+      "183d84d9-987f-4d15-adaa-b5faba7893a2",
+      "Channel_2_Mod_Output"
+    ],
+    [
+      "2ee09c6b-134e-4d93-9497-f56b9c0add0a",
+      "Channel_1_Pitch_Output"
+    ],
+    [
+      "f16b0b6c-a437-4553-837d-6dcc8f045fe9",
+      "Channel_2_Pitch_Output"
+    ],
+    [
+      "5e0d641c-9cfe-4fce-a7cc-f90618773e53",
+      "Channel_1_Trigger_Output"
+    ],
+    [
+      "bfacd326-7f9a-4bae-a4fd-463364a6dde1",
+      "Channel_2_Trigger_Output"
+    ],
+    [
+      "0a569379-bcc1-47e3-9d09-fc08854a7987",
+      "Audio_Output_Left"
+    ],
+    [
+      "c04e0451-ba3e-465d-b0d1-cf5de3ce5a73",
+      "Audio_Output_Right"
+    ],
+    [
+      "9d560ee0-8774-424d-bde1-c65ba224d2ff",
+      "Clock_Output"
     ]
   ],
   "text_variables": {}
