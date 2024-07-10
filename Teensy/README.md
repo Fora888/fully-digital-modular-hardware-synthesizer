@@ -18,6 +18,10 @@ This folder contains PCBs as well as panel designs for the example modules. All 
 </p>
 
 ### Wavetable oscillator
+<p float="left">
+  <img src="https://github.com/Fora888/fully-digital-modular-hardware-synthesizer/blob/main/Teensy/PCB/WavetableVCOModule/Render.png" width="300" height="300" />
+  <img src="https://github.com/Fora888/fully-digital-modular-hardware-synthesizer/blob/main/Teensy/PCB/WavetableVCOModule/Schematic.png" height="300" />
+</p>
 
 ### USB I/O
 <p float="left">
