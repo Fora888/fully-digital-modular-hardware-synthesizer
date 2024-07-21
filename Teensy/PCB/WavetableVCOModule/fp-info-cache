@@ -1,4 +1,4 @@
-20357732048425226
+20362900002284408
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -57686,6 +57686,13 @@ Connector
 0
 12
 9
+Misc
+Screw_Slots
+
+
+0
+0
+0
 Module
 A20_OLINUXINO_LIME2
 A20 Olinuxino LIME2, 1.2GHz, 512-1024MB RAM, Micro-SD, NAND or eMMC, 1000Mbit Ethernet
@@ -75102,6 +75109,13 @@ Perfboard
 0
 3
 3
+Perfboard
+3.5mm Jack Perfboard_Hole
+
+
+0
+0
+0
 Potentiometer
 Bourns_PTV09A-4020UB103
 Bourns_PTV09A-4025FB103, http://www.bourns.com/docs/Product-Datasheets/ptv09.pdf
@@ -75116,6 +75130,13 @@ Potentiometer vertical Bourns PTV09A-1 Single
 0
 3
 3
+Potentiometer
+Bourns_PTV09A-X_Hole
+Bourns_PTV09A-4025FB103, http://www.bourns.com/docs/Product-Datasheets/ptv09.pdf
+Potentiometer vertical Bourns PTV09A-1 Single
+0
+0
+0
 Potentiometer_SMD
 Potentiometer_ACP_CA6-VSMD_Vertical
 Potentiometer, vertical, ACP CA6-VSMD, http://www.acptechnologies.com/wp-content/uploads/2017/06/01-ACP-CA6.pdf
