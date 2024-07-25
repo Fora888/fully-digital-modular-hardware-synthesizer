@@ -33,9 +33,9 @@
         "other_text_thickness": 0.15,
         "other_text_upright": false,
         "pads": {
-          "drill": 0.762,
-          "height": 1.524,
-          "width": 1.524
+          "drill": 5.74,
+          "height": 4.2,
+          "width": 6.74
         },
         "silk_line_width": 0.12,
         "silk_text_italic": false,
@@ -126,7 +126,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "Panel.kicad_pro",
+    "filename": "WavetableVCO_Panel.kicad_pro",
     "version": 1
   },
   "net_settings": {
@@ -158,7 +158,7 @@
     "last_paths": {
       "gencad": "",
       "idf": "",
-      "netlist": "",
+      "netlist": "./",
       "specctra_dsn": "",
       "step": "",
       "vrml": ""
