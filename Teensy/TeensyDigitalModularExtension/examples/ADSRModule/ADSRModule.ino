@@ -3,6 +3,10 @@
 #include <ButtonsAndKnobs.h>
 
 
+#define ATTACK_LED_PIN 12
+#define DECAY_SUSTAIN_LED_PIN 13
+#define RELEASE_LED_PIN 33
+
 // Audio Objects
 
 AudioADSR     adsrGenerator;
@@ -33,6 +37,12 @@ AudioInvert                     outputInverter;
 AudioOutputSerial               ADSROutput(&Serial1);
 AudioOutputSerial               outputInverted(&Serial2);
 
+AudioLED                      attackIndicator(ATTACK_LED_PIN);
+AudioLED                      decaySustainIndicator(DECAY_SUSTAIN_LED_PIN);
+AudioLED                      releaseIndicator(RELEASE_LED_PIN);
+
+AudioSynthWaveformDc          zeroSource;   
+
 
 //Audio Routing
 
@@ -61,6 +71,10 @@ AudioConnection           outputScaleToOutput(outputScale, 0, ADSROutput, 0);
 
 AudioConnection           outputScaleToInverter(outputScale, 0, outputInverter, 0);
 AudioConnection           inverterToOutputInverted(outputInverter, 0, outputInverted, 0);
+
+AudioConnection           toAttackIndicator(zeroSource, attackIndicator);
+AudioConnection           toDecaySustainIndicator(zeroSource, decaySustainIndicator);
+AudioConnection           toReleaseIndicator(zeroSource, releaseIndicator);
 
 
 // Pot and Button Pins
@@ -92,8 +106,8 @@ AudioConnection           inverterToOutputInverted(outputInverter, 0, outputInve
 #define OUTPUT_SCALE_DIGITAL_PIN 11
 #define OUTPUT_SCALE_ANALOG_PIN 23
 
-#define MODE_SWITCH_DOWN_DIGITAL_PIN 30
-#define MODE_SWITCH_UP_DIGITAL_PIN 31
+#define MODE_SWITCH_DOWN_DIGITAL_PIN 31
+#define MODE_SWITCH_UP_DIGITAL_PIN 30
 
 
 //Pot and Button Objects
@@ -130,7 +144,7 @@ void loop()
   //Read Pots
   
   float attackTimeModOffsetReading = attackTimeModOffsetPot.read();
-  float attackSlopeOffsetReading = attackSlopeOffsetPot.read() * 2.0f - 1.0f;
+  float attackSlopeOffsetReading = -(attackSlopeOffsetPot.read() * 2.0f - 1.0f);
   float attackTimeModScaleReading = attackTimeModScalePot.read();
   
   float decayTimeModOffsetReading = decayTimeModOffsetPot.read();
@@ -146,7 +160,6 @@ void loop()
   
   float outputScaleReading = outputScalePot.read();
 
-  
   //Apply new values
 
   AudioNoInterrupts();
@@ -178,6 +191,47 @@ void loop()
   {
     adsrGenerator.setMode(AudioADSR::Mode::ADSR);
   }
+
+  switch(adsrGenerator.getCurrentSection())
+  {
+    case AudioADSR::Section::ATTACK:
+      toAttackIndicator.disconnect();
+      toDecaySustainIndicator.disconnect();
+      toReleaseIndicator.disconnect();
+      toAttackIndicator.connect(adsrGenerator, attackIndicator);
+      toDecaySustainIndicator.connect(zeroSource, decaySustainIndicator);
+      toReleaseIndicator.connect(zeroSource, releaseIndicator);
+      break;
+
+    case AudioADSR::Section::DECAY:
+    case AudioADSR::Section::SUSTAIN:
+      toAttackIndicator.disconnect();
+      toDecaySustainIndicator.disconnect();
+      toReleaseIndicator.disconnect();
+      toAttackIndicator.connect(zeroSource, attackIndicator);
+      toDecaySustainIndicator.connect(adsrGenerator, decaySustainIndicator);
+      toReleaseIndicator.connect(zeroSource, releaseIndicator);
+      break;
+
+    case AudioADSR::Section::RELEASE:
+      toAttackIndicator.disconnect();
+      toDecaySustainIndicator.disconnect();
+      toReleaseIndicator.disconnect();
+      toAttackIndicator.connect(zeroSource, attackIndicator);
+      toDecaySustainIndicator.connect(zeroSource, decaySustainIndicator);
+      toReleaseIndicator.connect(adsrGenerator, releaseIndicator);
+      break;
+
+    case AudioADSR::Section::STANDBY:
+      toAttackIndicator.disconnect();
+      toDecaySustainIndicator.disconnect();
+      toReleaseIndicator.disconnect();
+      toAttackIndicator.connect(zeroSource, attackIndicator);
+      toDecaySustainIndicator.connect(zeroSource, decaySustainIndicator);
+      toReleaseIndicator.connect(zeroSource, releaseIndicator);
+      break; 
+  }
+  
   AudioInterrupts();
   
 }

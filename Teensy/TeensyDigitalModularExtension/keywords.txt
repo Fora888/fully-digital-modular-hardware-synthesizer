@@ -14,11 +14,18 @@ Potentiometer					KEYWORD1
 AudioInvert						KEYWORD1
 
 AudioADSR						KEYWORD1
+getCurrentSection				KEYWORD2
 setMode							KEYWORD2
 Mode							KEYWORD3
+Section							KEYWORD3
 LOOP							LITERAL1
 ADR								LITERAL1
 ADSR							LITERAL1
+ATTACK							LITERAL1
+DECAY							LITERAL1
+SUSTAIN							LITERAL1
+RELEASE							LITERAL1
+STANDBY							LITERAL1
 
 SC16IS7xxManager				KEYWORD1
 

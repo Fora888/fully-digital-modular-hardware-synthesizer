@@ -4,8 +4,9 @@
 
 void AudioLED::update(void)
 {
-	audio_block_t* block = receiveReadOnly();
+	audio_block_t* block = receiveReadOnly(0);
 	if (!block) {
+		analogWrite(LEDpin, 0);
 		return;
 	}
 

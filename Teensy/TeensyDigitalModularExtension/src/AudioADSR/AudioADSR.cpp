@@ -74,7 +74,7 @@ void AudioADSR::update()
 			{
 				out->data[i] = (attackFunction(sectionRelativePosition, (float)attackSlope->data[i] / INT16_MAX) * (1- preAttackLevel) + preAttackLevel) * INT16_MAX;
 				sectionRelativePosition += SECONDS_PER_SAMPLE / (timeFunction((float)attackTime->data[i] / INT16_MAX) * maxAttackTime);
-				if (sectionRelativePosition > 1.0f)
+				if (sectionRelativePosition >= 1.0f)
 				{
 					sectionRelativePosition = 0.0f;
 					currentSection = DECAY;
@@ -86,8 +86,12 @@ void AudioADSR::update()
 			{
 				float relativSustainLevel = (float)sustainLevel->data[i] / INT16_MAX;
 				out->data[i] = (decayFunction(sectionRelativePosition, (float)decaySlope->data[i] / INT16_MAX) * (1- relativSustainLevel) + relativSustainLevel) * INT16_MAX;
-				sectionRelativePosition += SECONDS_PER_SAMPLE / (timeFunction((float)decayTime->data[i] / INT16_MAX) * maxDecayTime);
-				if (sectionRelativePosition > 1.0f)
+				float timeInput = (float)decayTime->data[i] / INT16_MAX;
+				if(timeInput < 0.002f)
+					sectionRelativePosition = 1.0f;
+				else
+					sectionRelativePosition += SECONDS_PER_SAMPLE / (timeFunction(timeInput) * maxDecayTime);
+				if (sectionRelativePosition >= 1.0f)
 				{
 					sectionRelativePosition = 0.0f;
 
@@ -114,7 +118,7 @@ void AudioADSR::update()
 			{
 				out->data[i] = (decayFunction(sectionRelativePosition, (float)releaseSlope->data[i] / INT16_MAX) * preReleaseLevel) * INT16_MAX;
 				sectionRelativePosition += SECONDS_PER_SAMPLE / (timeFunction((float)releaseTime->data[i] / INT16_MAX) * maxReleaseTime);
-				if (sectionRelativePosition > 1.0f)
+				if (sectionRelativePosition >= 1.0f)
 				{
 					sectionRelativePosition = 0.0f;
 					if(currentMode == LOOP)
@@ -207,5 +211,5 @@ float AudioADSR::decayFunction(float position, float interpolation)
 
 float AudioADSR::timeFunction(float time)
 {
-	return pow(time, 3);
+	return pow(2, 14 * (time - 1));
 }

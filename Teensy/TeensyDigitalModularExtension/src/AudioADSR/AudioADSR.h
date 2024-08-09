@@ -12,7 +12,9 @@ public:
 	AudioADSR() : AudioStream(8, inputQueueArray) {}
 	virtual void update();
 	enum Mode { ADSR, ADR, LOOP };
+	enum Section { ATTACK, DECAY, SUSTAIN, RELEASE, STANDBY };
 	void setMode(Mode newMode) {currentMode = newMode;};
+	Section getCurrentSection() {return currentSection;};
 private:
 	audio_block_t* inputQueueArray[8];
 	float maxAttackTime = 20.0f; 
@@ -22,7 +24,6 @@ private:
 	float preReleaseLevel = 0.0f;
 	float preAttackLevel = 0.0f;
 
-	enum Section { ATTACK, DECAY, SUSTAIN, RELEASE, STANDBY };
 	Section currentSection = ATTACK;
 	float sectionRelativePosition = 0.0f;
 
