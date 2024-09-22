@@ -7,26 +7,26 @@ This folder contains PCBs as well as panel designs for the example modules. All 
 
 ### VCA
 <p float="left">
-  <img src="https://github.com/Fora888/fully-digital-modular-hardware-synthesizer/blob/main/Teensy/PCB/VCAModule/Rendering.png" width="300" height="300" />
-  <img src="https://github.com/Fora888/fully-digital-modular-hardware-synthesizer/blob/main/Teensy/PCB/VCAModule/Schematic.png" height="300" />
+  <img src="https://github.com/Fora888/fully-digital-modular-hardware-synthesizer/blob/main/Teensy/PCB/VCAModule/VCA_Rendering.png" width="300" height="300" />
+  <img src="https://github.com/Fora888/fully-digital-modular-hardware-synthesizer/blob/main/Teensy/PCB/VCAModule/VCA_Schematic.png" height="300" />
 </p>
 
 ### ADSR envelope generator
 <p float="left">
-  <img src="https://github.com/Fora888/fully-digital-modular-hardware-synthesizer/blob/main/Teensy/PCB/ADSRModule/Rendering.png" width="300" height="300" />
-  <img src="https://github.com/Fora888/fully-digital-modular-hardware-synthesizer/blob/main/Teensy/PCB/ADSRModule/ADSRSchematic.png" height="300" />
+  <img src="https://github.com/Fora888/fully-digital-modular-hardware-synthesizer/blob/main/Teensy/PCB/ADSRModule/ADSR_Rendering.png" width="300" height="300" />
+  <img src="https://github.com/Fora888/fully-digital-modular-hardware-synthesizer/blob/main/Teensy/PCB/ADSRModule/ADSR_Schematic.png" height="300" />
 </p>
 
 ### Wavetable oscillator
 <p float="left">
-  <img src="https://github.com/Fora888/fully-digital-modular-hardware-synthesizer/blob/main/Teensy/PCB/WavetableVCOModule/Render.png" width="300" height="300" />
-  <img src="https://github.com/Fora888/fully-digital-modular-hardware-synthesizer/blob/main/Teensy/PCB/WavetableVCOModule/Schematic.png" height="300" />
+  <img src="https://github.com/Fora888/fully-digital-modular-hardware-synthesizer/blob/main/Teensy/PCB/WavetableVCOModule/WavetableVCO_Render.png" width="300" height="300" />
+  <img src="https://github.com/Fora888/fully-digital-modular-hardware-synthesizer/blob/main/Teensy/PCB/WavetableVCOModule/WavetableVCO_Schematic.png" height="300" />
 </p>
 
 ### USB I/O
 <p float="left">
-  <img src="https://github.com/Fora888/fully-digital-modular-hardware-synthesizer/blob/main/Teensy/PCB/USB_IOModule/Render.png" width="300" height="300" />
-  <img src="https://github.com/Fora888/fully-digital-modular-hardware-synthesizer/blob/main/Teensy/PCB/USB_IOModule/Schematic.png" height="300" />
+  <img src="https://github.com/Fora888/fully-digital-modular-hardware-synthesizer/blob/main/Teensy/PCB/USB_IOModule/USB_IO_Render.png" width="300" height="300" />
+  <img src="https://github.com/Fora888/fully-digital-modular-hardware-synthesizer/blob/main/Teensy/PCB/USB_IOModule/USB_IO_Schematic.png" height="300" />
 </p>
 
 ### Analog I/O
