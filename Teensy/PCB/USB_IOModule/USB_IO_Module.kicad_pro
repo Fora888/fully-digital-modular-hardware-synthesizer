@@ -55,7 +55,10 @@
           "width": 0.0
         }
       ],
-      "drc_exclusions": [],
+      "drc_exclusions": [
+        "courtyards_overlap|102565001|154405001|25d9e86e-feb5-499e-94d3-e79d4a932380|a5d98e2b-0ebb-430a-8e58-9bce83a6a026",
+        "courtyards_overlap|130505001|154405001|0b8f9cfb-aa08-4e85-989e-d4c4506ea02a|59086b32-de0e-4648-85ab-f088dac181b3"
+      ],
       "meta": {
         "version": 2
       },
@@ -348,7 +351,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "USB_IOModule.kicad_pro",
+    "filename": "USB_IO_Module.kicad_pro",
     "version": 1
   },
   "net_settings": {
@@ -380,7 +383,7 @@
     "last_paths": {
       "gencad": "",
       "idf": "",
-      "netlist": "",
+      "netlist": "./",
       "specctra_dsn": "",
       "step": "",
       "vrml": ""

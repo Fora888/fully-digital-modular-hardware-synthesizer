@@ -1,4 +1,4 @@
-20354285907270879
+20369807385097811
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -57672,6 +57672,41 @@ LM358D
 0
 8
 8
+Misc
+1.5_inch_Oled
+
+
+0
+7
+7
+Misc
+D_SOD-123 Handsolder
+SOD-123
+SOD-123
+0
+2
+2
+Misc
+LED_D3.0mm_Hole
+LED, diameter 3.0mm, 2 pins
+LED diameter 3.0mm 2 pins
+0
+0
+0
+Misc
+MSD4A
+MSD-4-A-2
+Connector
+0
+12
+9
+Misc
+Screw_Slots
+
+
+0
+2
+1
 Module
 A20_OLINUXINO_LIME2
 A20 Olinuxino LIME2, 1.2GHz, 512-1024MB RAM, Micro-SD, NAND or eMMC, 1000Mbit Ethernet
@@ -75088,6 +75123,13 @@ Perfboard
 0
 3
 3
+Perfboard
+3.5mm Jack Perfboard_Hole
+
+
+0
+0
+0
 Potentiometer
 Bourns_PTV09A-4020UB103
 Bourns_PTV09A-4025FB103, http://www.bourns.com/docs/Product-Datasheets/ptv09.pdf
@@ -75102,6 +75144,20 @@ Potentiometer vertical Bourns PTV09A-1 Single
 0
 3
 3
+Potentiometer
+Bourns_PTV09A-XF_Hole
+Bourns_PTV09A-4025FB103, http://www.bourns.com/docs/Product-Datasheets/ptv09.pdf
+Potentiometer vertical Bourns PTV09A-1 Single
+0
+0
+0
+Potentiometer
+Bourns_PTV09A-X_Hole
+Bourns_PTV09A-4025FB103, http://www.bourns.com/docs/Product-Datasheets/ptv09.pdf
+Potentiometer vertical Bourns PTV09A-1 Single
+0
+0
+0
 Potentiometer_SMD
 Potentiometer_ACP_CA6-VSMD_Vertical
 Potentiometer, vertical, ACP CA6-VSMD, http://www.acptechnologies.com/wp-content/uploads/2017/06/01-ACP-CA6.pdf
@@ -84573,6 +84629,13 @@ Miniature SPDT Toggle
 0
 3
 3
+Toggle
+Miniature SPDT Toggle_Hole
+
+
+0
+0
+0
 Toggle
 Miniature Toggle
 
