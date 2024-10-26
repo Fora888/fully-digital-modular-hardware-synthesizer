@@ -48,8 +48,8 @@ AudioConnection          fmScaleToWavetable(fmSignalScale, 0, wavetable, 0);
 
 #define SCREEN_WIDTH 128 // OLED display width, in pixels
 #define SCREEN_HEIGHT 64 // OLED display height, in pixels
-#define OLED_DC     31
-#define OLED_CS     33
+#define OLED_DC     14
+#define OLED_CS     17
 #define OLED_RESET  39
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT,
   &SPI, OLED_DC, OLED_RESET, OLED_CS);
@@ -75,7 +75,7 @@ float displaySamples[128];
 #define FM_SCALE_DIGITAL_PIN  6
 #define FM_SCALE_ANALOG_PIN  22
 
-#define NEXT_FILE_BUTTON_PIN  32
+#define NEXT_FILE_BUTTON_PIN  8
 
 
 //Pot and Button Objects
@@ -90,7 +90,7 @@ Potentiometer frequencyOffsetPot(FREQUENCY_OFFSET_DIGITAL_PIN, FREQUENCY_OFFSET_
 
 Potentiometer fmScalePot(FM_SCALE_DIGITAL_PIN, FM_SCALE_ANALOG_PIN);
 
-Button nextFileButton(NEXT_FILE_BUTTON_PIN, false);
+Button nextFileButton(NEXT_FILE_BUTTON_PIN, false, INPUT_PULLUP);
 
 
 

@@ -1,4 +1,4 @@
-20369807385097811
+20374989023425519
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -57701,11 +57701,32 @@ Connector
 12
 9
 Misc
+PLP2_Hole
+PLP2 Hole
+PLP2 3mm
+0
+0
+0
+Misc
+PLP5_Hole
+PLP5_Hole
+PLP5 5mm light pipe
+0
+0
+0
+Misc
 Screw_Slots
 
 
 0
 2
+1
+Misc
+Würth_REDCUBE_SMD_7466203
+
+
+0
+1
 1
 Module
 A20_OLINUXINO_LIME2

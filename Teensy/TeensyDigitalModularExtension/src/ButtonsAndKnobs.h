@@ -37,7 +37,8 @@ class Potentiometer
 class Button
 {
   public:
-    Button(const uint16_t& digitalPin, bool inverted){ pinMode(digitalPin, INPUT); this->buttonPin = digitalPin; this->inverted = inverted;}
+    Button(const uint16_t& digitalPin, bool inverted){ pinMode(digitalPin, INPUT_PULLUP); this->buttonPin = digitalPin; this->inverted = inverted;}
+    Button(const uint16_t& digitalPin, bool inverted, uint8_t mode) { pinMode(digitalPin, mode); this->buttonPin = digitalPin; this->inverted = inverted; }
 
     bool read()
     {
